@@ -1,0 +1,46 @@
+:root {
+  --blue: #789dee;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+* {
+  color: var(--fontColor);
+  font-family: helvetica;
+}
+
+body {
+  background: var(--bg);
+  font-family: monospace;
+}
+
+ul {
+  font-family: helvetica;
+}
+
+li {
+  list-style: circle;
+}
+
+.list {
+  list-style: square;
+}
+
+#msg {
+  font-family: monospace;
+}
+
+.light-theme {
+  color: #000000;
+  background: #789dee;
+}
+
+.light-theme {
+  --bg: var(--blue);
+  --fontColor: var(--black);
+}
+
+.dark-theme {
+  --bg: var(--black);
+  --fontColor: var(--blue);
+}
