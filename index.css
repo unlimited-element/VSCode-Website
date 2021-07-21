@@ -1,0 +1,229 @@
+.btn {
+  display: inline-block;
+  margin: 6px;
+  font-size: inherit;
+  line-height: 1.42;
+  padding: 0.6em 1.8em;
+  font-weight: normal;
+  border-width: 3px;
+  border-style: solid;
+  background: transparent;
+  border-radius: 0;
+  cursor: pointer;
+  font-family: "Booster Next FY", "Avenir Next", Avenir, sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: bottom;
+  position: relative;
+  -webkit-transition: color 0.4s, -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.4s, -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.4s, transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.4s, transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.btn.btn-disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.btn.btn-disabled:active {
+  opacity: 0.6;
+}
+
+.btn:hover:before {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+.btn:hover:after {
+  -webkit-transform: translate(6px, 6px);
+          transform: translate(6px, 6px);
+}
+
+.btn:active {
+  -webkit-transition-duration: 0.05s;
+          transition-duration: 0.05s;
+  -webkit-transform: translate(6px, 6px);
+          transform: translate(6px, 6px);
+}
+
+.btn:active:after {
+  -webkit-transition-duration: 0.05s;
+          transition-duration: 0.05s;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+.btn:before, .btn:after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.btn:before {
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transition: -webkit-transform cubic-bezier(1, 0, 0, 1) 0.4s;
+  transition: -webkit-transform cubic-bezier(1, 0, 0, 1) 0.4s;
+  transition: transform cubic-bezier(1, 0, 0, 1) 0.4s;
+  transition: transform cubic-bezier(1, 0, 0, 1) 0.4s, -webkit-transform cubic-bezier(1, 0, 0, 1) 0.4s;
+}
+
+.btn:after {
+  top: -3px;
+  left: -3px;
+  border-width: 3px;
+  border-style: solid;
+  -webkit-transition: -webkit-transform cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
+  transition: -webkit-transform cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
+  transition: transform cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
+  transition: transform cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, -webkit-transform cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
+}
+
+.btn-primary {
+  color: #52C11F;
+  border-color: #52C11F;
+}
+
+.btn-primary:hover {
+  color: #E6EAEF;
+}
+
+.btn-primary:before {
+  background-color: #52C11F;
+}
+
+.btn-primary:after {
+  border-color: #52C11F;
+}
+
+.btn-secondary {
+  color: #0B44EF;
+  border-color: #0B44EF;
+}
+
+.btn-secondary:hover {
+  color: #E6EAEF;
+}
+
+.btn-secondary:before {
+  background-color: #0B44EF;
+}
+
+.btn-secondary:after {
+  border-color: #0B44EF;
+}
+
+.btn-tertiary {
+  color: #FF006A;
+  border-color: #FF006A;
+}
+
+.btn-tertiary:hover {
+  color: #E6EAEF;
+}
+
+.btn-tertiary:before {
+  background-color: #FF006A;
+}
+
+.btn-tertiary:after {
+  border-color: #FF006A;
+}
+
+.btn-tetrary {
+  color: #991BE2;
+  border-color: #991BE2;
+}
+
+.btn-tetrary:hover {
+  color: #E6EAEF;
+}
+
+.btn-tetrary:before {
+  background-color: #991BE2;
+}
+
+.btn-tetrary:after {
+  border-color: #991BE2;
+}
+
+.btn-black {
+  color: #252730;
+  border-color: #252730;
+}
+
+.btn-black:hover {
+  color: #E6EAEF;
+}
+
+.btn-black:before {
+  background-color: #252730;
+}
+
+.btn-black:after {
+  border-color: #252730;
+}
+
+.btn-dark {
+  color: #3F4351;
+  border-color: #3F4351;
+}
+
+.btn-dark:hover {
+  color: #E6EAEF;
+}
+
+.btn-dark:before {
+  background-color: #3F4351;
+}
+
+.btn-dark:after {
+  border-color: #3F4351;
+}
+
+.btn-gray {
+  color: #6D6F7F;
+  border-color: #6D6F7F;
+}
+
+.btn-gray:hover {
+  color: #E6EAEF;
+}
+
+.btn-gray:before {
+  background-color: #6D6F7F;
+}
+
+.btn-gray:after {
+  border-color: #6D6F7F;
+}
+
+.btn-light {
+  color: #E6EAEF;
+  border-color: #E6EAEF;
+}
+
+.btn-light:hover {
+  color: #5d7592;
+}
+
+.btn-light:before {
+  background-color: #E6EAEF;
+}
+
+.btn-light:after {
+  border-color: #E6EAEF;
+}
+/*# sourceMappingURL=index.css.map */

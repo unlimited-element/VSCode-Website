@@ -14,33 +14,33 @@ body {
   font-family: monospace;
 }
 
-ul {
-  font-family: helvetica;
-}
-
-li {
-  list-style: circle;
-}
-
-.list {
-  list-style: square;
-}
-
-#msg {
-  font-family: monospace;
-}
-
-.light-theme {
-  color: #000000;
-  background: #789dee;
-}
-
 .light-theme {
   --bg: var(--blue);
   --fontColor: var(--black);
+  --btnBg: var(--black);
+  --btnFontColor: var(--white);
 }
 
 .dark-theme {
   --bg: var(--black);
   --fontColor: var(--blue);
+  --btnBg: var(--blue);
+  --btnFontColor: var(--black);
+}
+
+.bdn {
+  margin: 0 auto;
+  display: block;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 5%;
+  border: none;
+  color: var(--btnFontColor);
+  background-color: var(--btnBg);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: xx-large
+}
+
+.bdn:focus {
+  outline-style: none;
 }

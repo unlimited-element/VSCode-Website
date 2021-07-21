@@ -1,0 +1,187 @@
+// Buttons - CHI
+// --------------------------------------------------------------------
+$chi-v-spacing: 0.6em;
+$chi-h-spacing: 1.8em;
+$chi-border-radius: 0;
+$chi-border-width: 3px;
+
+$color-primary: #52C11F;
+$color-secondary: #0B44EF;
+$color-tertiary: #FF006A;
+$color-tetrary: #991BE2;
+
+$gray-lighter: #E6EAEF;
+$gray-light: #CED0DB;
+$gray: #6D6F7F;
+$gray-dark: #3F4351;
+$gray-darker: #252730;
+
+$font-size: 16px;
+$font-family: 'Booster Next FY',
+'Avenir Next',
+Avenir,
+sans-serif;
+$font-family-heading: $font-family;
+$line-height: 1.42;
+
+// Easings
+$ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+$ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+$ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$ease-out-quint: cubic-bezier(.23, 1, .32, 1);
+
+@function check-background($color) {
+    @if (lightness($color) > 66) {
+        @return $gray-darker; // Lighter background, return dark color
+    }
+
+    @else {
+        @return $gray-lighter; // Darker background, return light color
+    }
+}
+
+@mixin v-padding($padding-top, $padding-bottom: $padding-top) {
+    padding-top: $padding-top;
+    padding-bottom: $padding-bottom;
+}
+
+@mixin h-padding($padding-left, $padding-right: $padding-left) {
+    padding-left: $padding-left;
+    padding-right: $padding-right;
+}
+
+@mixin btn-common($chi-v-spacing, $h-spacing: $chi-v-spacing, $border-radius: 0, $border-width: 0) {
+    display: inline-block;
+    margin: 6px;
+    font-size: inherit;
+    line-height: $line-height;
+    padding: $chi-v-spacing $h-spacing;
+    font-weight: normal;
+    border-width: $border-width;
+    border-style: solid;
+    background: transparent;
+    border-radius: $border-radius;
+    cursor: pointer;
+    font-family: $font-family;
+    user-select: none;
+    vertical-align: bottom;
+
+    &.btn-disabled {
+        cursor: not-allowed;
+        opacity: 0.8;
+
+        &:active {
+            opacity: 0.6;
+        }
+    }
+}
+
+
+@mixin btn-chi($color, $text-color: check-background($color)) {
+    color: $color;
+    border-color: $color;
+
+
+    &:hover {
+        color: $text-color;
+    }
+
+    &:before {
+        background-color: $color;
+    }
+
+    &:after {
+        border-color: $color;
+    }
+
+}
+
+.btn {
+    $offset: 6px;
+    @include btn-common($chi-v-spacing, $chi-h-spacing, $chi-border-radius, $chi-border-width);
+    position: relative;
+    transition: color 0.4s, transform 0.4s $ease-in-out-cubic;
+    box-sizing: border-box;
+
+    &:hover {
+
+        &:before {
+            transform: scaleY(1);
+        }
+
+        &:after {
+            transform: translate($offset, $offset);
+        }
+    }
+
+    &:active {
+        transition-duration: 0.05s;
+        transform: translate($offset, $offset);
+
+        &:after {
+            transition-duration: 0.05s;
+            transform: translate(0, 0);
+        }
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+    }
+
+    &:before {
+        transform-origin: top center;
+        transform: scaleY(0);
+        transition: transform $ease-in-out-expo 0.4s;
+    }
+
+    &:after {
+        top: 0-$chi-border-width;
+        left: 0-$chi-border-width;
+        border-width: $chi-border-width;
+        border-style: solid;
+        transition: transform $ease-in-out-cubic 0.4s;
+    }
+
+}
+
+.btn-primary {
+    @include btn-chi($color-primary);
+}
+
+.btn-secondary {
+    @include btn-chi($color-secondary);
+}
+
+.btn-tertiary {
+    @include btn-chi($color-tertiary);
+}
+
+.btn-tetrary {
+    @include btn-chi($color-tetrary);
+}
+
+.btn-black {
+    @include btn-chi($gray-darker);
+}
+
+.btn-dark {
+    @include btn-chi($gray-dark);
+}
+
+.btn-gray {
+    @include btn-chi($gray);
+}
+
+.btn-light {
+    @include btn-chi($gray-lighter, darken($gray-lighter, 45%));
+}
