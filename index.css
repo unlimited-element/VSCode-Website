@@ -1,13 +1,12 @@
 .btn {
   display: inline-block;
-  margin: 6px;
   font-size: inherit;
-  line-height: 1.42;
-  padding: 0.6em 1.8em;
+  padding: 2rem 3rem;
   font-weight: normal;
-  border-width: 3px;
+  border-width: 0.2rem;
   border-style: solid;
   background: transparent;
+  border-color: #111111;
   border-radius: 0;
   cursor: pointer;
   font-family: "Booster Next FY", "Avenir Next", Avenir, sans-serif;
@@ -17,10 +16,10 @@
           user-select: none;
   vertical-align: bottom;
   position: relative;
-  -webkit-transition: color 0.4s, -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: color 0.4s, -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: color 0.4s, transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: color 0.4s, transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transition: color 1s, -webkit-transform 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 1s, -webkit-transform 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 1s, transform 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 1s, transform 0.1s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -35,8 +34,8 @@
 }
 
 .btn:hover:before {
-  -webkit-transform: scaleY(1);
-          transform: scaleY(1);
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
 }
 
 .btn:hover:after {
@@ -74,21 +73,21 @@
           transform-origin: top center;
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
-  -webkit-transition: -webkit-transform cubic-bezier(1, 0, 0, 1) 0.4s;
-  transition: -webkit-transform cubic-bezier(1, 0, 0, 1) 0.4s;
-  transition: transform cubic-bezier(1, 0, 0, 1) 0.4s;
-  transition: transform cubic-bezier(1, 0, 0, 1) 0.4s, -webkit-transform cubic-bezier(1, 0, 0, 1) 0.4s;
+  -webkit-transition: -webkit-transform cubic-bezier(1, 0, 0, 1) 0.3s;
+  transition: -webkit-transform cubic-bezier(1, 0, 0, 1) 0.3s;
+  transition: transform cubic-bezier(1, 0, 0, 1) 0.3s;
+  transition: transform cubic-bezier(1, 0, 0, 1) 0.3s, -webkit-transform cubic-bezier(1, 0, 0, 1) 0.3s;
 }
 
 .btn:after {
-  top: -3px;
-  left: -3px;
-  border-width: 3px;
+  top: -0.2rem;
+  left: -0.2rem;
+  border-width: 0.2rem;
   border-style: solid;
-  -webkit-transition: -webkit-transform cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
-  transition: -webkit-transform cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
-  transition: transform cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
-  transition: transform cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, -webkit-transform cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
+  -webkit-transition: -webkit-transform cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
+  transition: -webkit-transform cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
+  transition: transform cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
+  transition: transform cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s, -webkit-transform cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
 }
 
 .btn-primary {
@@ -97,7 +96,7 @@
 }
 
 .btn-primary:hover {
-  color: #E6EAEF;
+  color: #52C11F;
 }
 
 .btn-primary:before {
@@ -114,7 +113,7 @@
 }
 
 .btn-secondary:hover {
-  color: #E6EAEF;
+  color: #0B44EF;
 }
 
 .btn-secondary:before {
@@ -131,7 +130,7 @@
 }
 
 .btn-tertiary:hover {
-  color: #E6EAEF;
+  color: #FF006A;
 }
 
 .btn-tertiary:before {
@@ -143,20 +142,20 @@
 }
 
 .btn-tetrary {
-  color: #991BE2;
-  border-color: #991BE2;
+  color: #789dee;
+  border-color: #789dee;
 }
 
 .btn-tetrary:hover {
-  color: #E6EAEF;
+  color: #789dee;
 }
 
 .btn-tetrary:before {
-  background-color: #991BE2;
+  background-color: #789dee;
 }
 
 .btn-tetrary:after {
-  border-color: #991BE2;
+  border-color: #789dee;
 }
 
 .btn-black {
@@ -165,7 +164,7 @@
 }
 
 .btn-black:hover {
-  color: #E6EAEF;
+  color: #252730;
 }
 
 .btn-black:before {
@@ -177,20 +176,20 @@
 }
 
 .btn-dark {
-  color: #3F4351;
-  border-color: #3F4351;
+  color: #1d2a58;
+  border-color: #1d2a58;
 }
 
 .btn-dark:hover {
-  color: #E6EAEF;
+  color: #1d2a58;
 }
 
 .btn-dark:before {
-  background-color: #3F4351;
+  background-color: #1d2a58;
 }
 
 .btn-dark:after {
-  border-color: #3F4351;
+  border-color: #1d2a58;
 }
 
 .btn-gray {
@@ -199,7 +198,7 @@
 }
 
 .btn-gray:hover {
-  color: #E6EAEF;
+  color: #6D6F7F;
 }
 
 .btn-gray:before {
@@ -208,22 +207,5 @@
 
 .btn-gray:after {
   border-color: #6D6F7F;
-}
-
-.btn-light {
-  color: #E6EAEF;
-  border-color: #E6EAEF;
-}
-
-.btn-light:hover {
-  color: #5d7592;
-}
-
-.btn-light:before {
-  background-color: #E6EAEF;
-}
-
-.btn-light:after {
-  border-color: #E6EAEF;
 }
 /*# sourceMappingURL=index.css.map */

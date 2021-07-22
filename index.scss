@@ -1,19 +1,18 @@
 // Buttons - CHI
 // --------------------------------------------------------------------
-$chi-v-spacing: 0.6em;
-$chi-h-spacing: 1.8em;
-$chi-border-radius: 0;
-$chi-border-width: 3px;
+$chi-v-spacing: 2rem;
+$chi-h-spacing: 3rem;
+$chi-border-width: .2rem;
 
 $color-primary: #52C11F;
 $color-secondary: #0B44EF;
 $color-tertiary: #FF006A;
-$color-tetrary: #991BE2;
+$color-tetrary: #789dee;
 
 $gray-lighter: #E6EAEF;
 $gray-light: #CED0DB;
 $gray: #6D6F7F;
-$gray-dark: #3F4351;
+$gray-dark: #1d2a58;
 $gray-darker: #252730;
 
 $font-size: 16px;
@@ -22,46 +21,25 @@ $font-family: 'Booster Next FY',
 Avenir,
 sans-serif;
 $font-family-heading: $font-family;
-$line-height: 1.42;
 
 // Easings
-$ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-$ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+// $ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+// $ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
 $ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
 $ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
-$ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-$ease-out-quint: cubic-bezier(.23, 1, .32, 1);
+// $ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+// $ease-out-quint: cubic-bezier(.23, 1, .32, 1);
 
-@function check-background($color) {
-    @if (lightness($color) > 66) {
-        @return $gray-darker; // Lighter background, return dark color
-    }
 
-    @else {
-        @return $gray-lighter; // Darker background, return light color
-    }
-}
-
-@mixin v-padding($padding-top, $padding-bottom: $padding-top) {
-    padding-top: $padding-top;
-    padding-bottom: $padding-bottom;
-}
-
-@mixin h-padding($padding-left, $padding-right: $padding-left) {
-    padding-left: $padding-left;
-    padding-right: $padding-right;
-}
-
-@mixin btn-common($chi-v-spacing, $h-spacing: $chi-v-spacing, $border-radius: 0, $border-width: 0) {
+@mixin btn-common($chi-v-spacing, $chi-h-spacing: $chi-v-spacing, $border-radius: 0, $border-width: 0) {
     display: inline-block;
-    margin: 6px;
     font-size: inherit;
-    line-height: $line-height;
-    padding: $chi-v-spacing $h-spacing;
+    padding: $chi-v-spacing $chi-h-spacing;
     font-weight: normal;
     border-width: $border-width;
     border-style: solid;
     background: transparent;
+    border-color: rgb(17, 17, 17);
     border-radius: $border-radius;
     cursor: pointer;
     font-family: $font-family;
@@ -79,13 +57,13 @@ $ease-out-quint: cubic-bezier(.23, 1, .32, 1);
 }
 
 
-@mixin btn-chi($color, $text-color: check-background($color)) {
+@mixin btn-chi($color) {
     color: $color;
     border-color: $color;
 
 
     &:hover {
-        color: $text-color;
+        color: $color;
     }
 
     &:before {
@@ -100,15 +78,15 @@ $ease-out-quint: cubic-bezier(.23, 1, .32, 1);
 
 .btn {
     $offset: 6px;
-    @include btn-common($chi-v-spacing, $chi-h-spacing, $chi-border-radius, $chi-border-width);
+    @include btn-common($chi-v-spacing, $chi-h-spacing, 0, $chi-border-width);
     position: relative;
-    transition: color 0.4s, transform 0.4s $ease-in-out-cubic;
+    transition: color 1s, transform 0.1s $ease-in-out-cubic;
     box-sizing: border-box;
 
     &:hover {
 
         &:before {
-            transform: scaleY(1);
+            transform: scaleY(0);
         }
 
         &:after {
@@ -141,7 +119,7 @@ $ease-out-quint: cubic-bezier(.23, 1, .32, 1);
     &:before {
         transform-origin: top center;
         transform: scaleY(0);
-        transition: transform $ease-in-out-expo 0.4s;
+        transition: transform $ease-in-out-expo 0.3s;
     }
 
     &:after {
@@ -149,7 +127,7 @@ $ease-out-quint: cubic-bezier(.23, 1, .32, 1);
         left: 0-$chi-border-width;
         border-width: $chi-border-width;
         border-style: solid;
-        transition: transform $ease-in-out-cubic 0.4s;
+        transition: transform $ease-in-out-cubic 0.3s;
     }
 
 }
@@ -180,8 +158,4 @@ $ease-out-quint: cubic-bezier(.23, 1, .32, 1);
 
 .btn-gray {
     @include btn-chi($gray);
-}
-
-.btn-light {
-    @include btn-chi($gray-lighter, darken($gray-lighter, 45%));
 }
